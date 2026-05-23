@@ -1,0 +1,80 @@
+<div class="card">
+    <div class="card-body">
+
+        <form #receipeForm="ngForm" (ngSubmit)="onAddSubmit()">
+
+            <div class="form-group">
+               <label for="recipeName">recipeName</label>
+               <input 
+               required
+               ngModel
+               name="recipeName"
+               type="text" 
+               class="form-control">
+            </div>
+
+            <div class="form-group">
+               <label for="Category">Category</label>
+               <input 
+               required
+               ngModel
+               name="category"
+               type="text" 
+               class="form-control">
+            </div>
+
+            <div class="form-group">
+               <label for="Price">Price</label>
+               <input 
+               required
+               ngModel
+               name="price"
+               type="number" 
+               class="form-control">
+            </div>
+
+            <div class="form-group">
+               <label for="Rating">Rating</label>
+               <input 
+               required
+               ngModel
+               name="rating"
+               type="number" 
+               class="form-control">
+            </div>
+
+            <div class="form-group">
+               <label for="imgUrl">imgUrl</label>
+               <input 
+               required
+               ngModel
+               name="imgUrl"
+               type="text" 
+               class="form-control">
+            </div>
+
+            
+
+            <button 
+            [disabled]="receipeForm.invalid"
+            *ngIf="!IsinEditMode"
+            mat-raised-button 
+            color="primary" 
+            type="submit">
+            Add button
+            </button>
+
+            <button 
+            (click)="onUpdate()"
+            [disabled]="receipeForm.invalid"
+            *ngIf="IsinEditMode"
+            mat-raised-button 
+            color="primary" 
+            type="button">
+            Update button
+            </button>
+
+        </form>
+
+    </div>
+</div>

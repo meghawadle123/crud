@@ -1,0 +1,67 @@
+<div class="card">
+    <h2>{{isinEditMode?'update student':'Add Student'}}</h2>
+    <div class="card-body">
+        <form #stdForm="ngForm" (ngSubmit)="onStudentAdd()">
+            <div class="form-group">
+                <label for="fname">fname</label>
+                <input 
+                required
+                ngModel
+                name="fname"
+                type="text" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="lname">lname</label>
+                <input 
+                required
+                ngModel
+                name="lname"
+                type="text" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="email">email</label>
+                <input 
+                required
+                ngModel
+                name="email"
+                type="text" class="form-control">
+            </div>
+        
+
+            <div class="form-group">
+                <label for="contact">contact</label>
+                <input 
+                required
+                ngModel
+                name="contact"
+                type="text" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="isActive">isActive</label>
+                <select 
+                required
+                ngModel
+                name="isActive"
+                type="text" class="form-control">
+
+
+                <option [ngValue]="true">Yes</option>
+                <option [ngValue]="false">No</option>
+                </select>
+            </div>
+
+            <button
+            *ngIf="!isinEditMode"
+            [disabled]="stdForm.invalid"
+            mat-raised-button color="primary" type="submit">Add button</button>
+            <button 
+            (click)="onUpdate()"
+            *ngIf="isinEditMode"
+            [disabled]="stdForm.invalid"
+            mat-raised-button color="primary" type="button">Update button</button>
+        </form>
+    </div>
+</div>

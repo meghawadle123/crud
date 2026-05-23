@@ -1,0 +1,10 @@
+
+<h2>{{getmsg||'are you sure?'}}</h2>
+<div class="d-flex justify-content-between">
+    <button 
+    (click)="onClick(true)"
+    mat-raised-button color="primary" >Yes</button>
+    <button 
+    (click)="onClick(false)"
+    mat-raised-button color="warn">No</button>
+</div>
