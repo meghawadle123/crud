@@ -1,5 +1,5 @@
 
-        <div class="container">
+        <div class="container" *ngIf="ReceipeArr.length>0 ;else Noreceipe">
             <div class="row">
                 <div class="col-md-4" *ngFor="let reciepeObj of ReceipeArr">
                     <div class="card">
@@ -29,5 +29,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+
+            </div>
+            <ng-template #Noreceipe>
+                <p>No receipe data Availbale</p>
+            </ng-template>
+        
    
